@@ -1,0 +1,34 @@
+let whaleTalk = (input) => {
+  let resultArray = [];
+  const vowels = ["a","e","i","o","u"];
+  //iterate through string
+  for(let i = 0; i < input.length; i++){
+    input = input.toLowerCase();
+    let currentLetter = input[i];
+    //console.log(currentLetter);
+    //iterate through vowels
+    for(let j = 0; j < vowels.length; j++){
+      let currentVowel = vowels[j];
+      //console.log(j);
+      if(currentLetter === currentVowel){
+        //check if e or u
+        if(currentLetter === 'e' || currentLetter === 'u'){
+          //push current letter twice
+          for(let k = 0; k < 2; k++){
+            resultArray.push(currentLetter);
+          }
+        }
+        else{
+        resultArray.push(currentLetter);
+        }
+      }
+    }
+  }
+  let resultString = resultArray.join('');
+  return resultString.toUpperCase();
+}
+
+let input1 = "turpentine and turtles";
+
+
+console.log(whaleTalk(input1));
